@@ -127,6 +127,7 @@ function collisionDetection() {
         {
           hittedBricksInOneCombo++;
           score += hittedBricksInOneCombo;
+          shootY = canvas.height - shootHeight;
           if(b.isPower) 
           {
             console.log("we hit power brick");
@@ -153,7 +154,7 @@ function collisionDetection() {
             alert("YOU WIN, CONGRATS!");
             document.location.reload();
           }
-          shootY = canvas.height - shootHeight;
+          // shootY = canvas.height - shootHeight;
         }
       }
     }
@@ -299,6 +300,9 @@ function update(){
   // Shoot
   if(upPressed){
     shootY -= 3;
+  }
+  else{
+    shootY = canvas.height - shootHeight;
   }
 
   x += dx;
